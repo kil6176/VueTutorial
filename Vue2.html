@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+            작성일 : 2021-02-19
+            v-bind 사용법
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Vue 튜토리얼 따라하기2 </title>
+</head>
+
+<body>
+
+    <div id="app">
+        <span v-bind:title="message">
+            내 위에 잠시 마우스를 올리면 동적으로 바인딩 된 title을 볼 수 있습니다!
+        </span>
+    </div>
+
+    <div id="app2">
+        <img :src="image" :alt="altText" :title="message" /> <!-- v-bind는 생략가능 -->
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "Socks",
+            }
+        })
+        var app = new Vue({
+            el: '#app2',
+            data: {
+                product: "Socks",
+                altText: "A pair of socks",
+                message: "이것은 양말",
+                image: "./img/socks.jpg"
+            }
+        })
+    </script>
+</body>
+
+</html>

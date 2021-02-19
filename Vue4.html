@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+            작성일 : 2021-02-19
+            v-for 사용
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Vue 튜토리얼 따라하기3 </title>
+</head>
+
+<body>
+
+    <div id="app">
+        <ol>
+            <!-- todo는 아이템명 자기가 원하는거 아무거나 적으면 된다 -->
+            <li v-for="todo in todos"> 
+                {{ todo.text }}
+            </li>
+
+            <!-- 그리고 괄호안에 두번째 아이템을 넣고 출력하면 순서를 출력해준다. -->
+            <li v-for="(todo, dkdk) in todos"></li>
+                {{ todo.text }}{{dkdk}}
+            </li>
+        </ol>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                todos: [
+                    { text: '자바스크립트' },
+                    { text: 'Vue Tutorial' },
+                    { text: '나중에 리액트도 배우자' }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

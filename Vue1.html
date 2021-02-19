@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+            작성일 : 2021-02-19
+            간단한 출력 배우기
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Vue 튜토리얼 따라하기 </title>
+</head>
+
+<body>
+    <div id="app">
+        {{ hello }}{{message}}
+    </div>
+    <br>
+    <div class="app2">
+        {{ hello + '?' + '이중괄호안에 + 연산자를 써서 글을 추가 하거나 데이터를 여러개 사용할수있다.' }} <br> {{message}} 
+    </div>
+    <br>
+    <div class="app2">
+        {{ hello }}{{message}}
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app', 
+            data: {
+                message: 'Hello World Vue!', //ajax에 data랑 비슷한거같다.
+                hello: 'Hello'
+            }
+        })
+        var app2 = new Vue({
+            el: '.app2', 
+            data: {
+                message: '클래스가 여러개 있을때는 아이디와 같이 일반적으로 사용하면 한개밖에 적용이 안된다', 
+                hello: 'Hello' 
+            }
+        })
+    </script>
+</body>
+
+</html>

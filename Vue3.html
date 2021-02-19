@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+            작성일 : 2021-02-19
+            v-if 사용
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Vue 튜토리얼 따라하기3 </title>
+</head>
+
+<body>
+
+    <div id="app">
+        <p v-if="seen">이건 나중에 게시판 만들때 유용하게 사용할 수 있을것 같다.</p>
+        <p v-if="seen2">이건 나중에 게시판 만들때 유용하게 사용할 수 있을것 같다2.</p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                seen: true,
+                seen2: false
+            }
+        })
+    </script>
+</body>
+
+</html>
