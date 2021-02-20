@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+            작성일 : 2021-02-20
+            사용자 입력 핸들링
+    -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Vue 튜토리얼 따라하기5 </title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!--메시지 뒤집기-->
+        <p>{{message}}</p>
+
+        <p>{{message2}}</p>
+
+        <!--실시간으로 입력한것을 이렇게 간단하게 바꿀 수 있는게 신기하다-->
+        <p>{{message3}}<input v-model="message3"></p>
+        
+        <!--onclick처럼 그냥 쓰면된다.-->
+        <button v-on:click="reverseMessage('dkssud')">메시지 뒤집기</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요! Vue.js!',
+                message2: '안녕하세요! Vue.js!',
+                message3: '안녕하세요! Vue.js!'
+            },
+            methods: {
+                reverseMessage: function (message) {
+                    this.message = this.message.split('').reverse().join('')
+                    this.message2 = message
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
